@@ -21,6 +21,8 @@
         <td><%= link_to 'Show', door %></td>
         <td><%= link_to 'Edit', edit_door_path(door) %></td>
         <td><%= link_to 'Destroy', door, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'open', open_door_path(door), method: :put %></td>
+        <td><%= link_to 'close', close_door_path(door), method: :put %></td>
       </tr>
     <% end %>
   </tbody>
