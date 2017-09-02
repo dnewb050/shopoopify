@@ -1,6 +1,6 @@
 class DoorsController < ApplicationController
   before_action :set_door, only: [:show, :edit, :update, :destroy, :open, :close]
-  skip_before_action :verify_authenticity_token, only [:open, :close]
+  skip_before_action :verify_authenticity_token, only: [:open, :close]
 
   # GET /doors
   # GET /doors.json
