@@ -52,6 +52,10 @@ class DoorsController < ApplicationController
     end
   end
 
+  def status
+    @doors = Door.all
+  end
+
   # PATCH/PUT /doors/1/open
   def open
     @door.is_open = true
