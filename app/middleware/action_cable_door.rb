@@ -1,4 +1,4 @@
-class StatusActionCable < ActionCable::Connection::WebSocket
+class DoorActionCable < ActionCable::Connection::WebSocket
   def initialize(app, options={})
     @app = app
  end

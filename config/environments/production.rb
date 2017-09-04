@@ -84,6 +84,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.middleware.use StatusActionCable
+  config.middleware.use DoorActionCable
   config.web_socket_server_url = "wss://dry-hamlet-23560.herokuapp.com/"
 end
