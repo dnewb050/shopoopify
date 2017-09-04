@@ -58,22 +58,22 @@ class DoorsController < ApplicationController
 
   # PATCH/PUT /doors/1/open
   def open
-    @door.is_open = true
-    @door.save
-    # if @door.update(door_params)
-    #   format.html { redirect_to @door, notice: 'Door was successfully updated.' }
-    #   format.json { render :show, status: :ok, location: @door }
-    # end
+    # @door.is_open = true
+    # @door.save
+    if @door.update(is_open: true)
+      @doors = Door.all
+      ActionCable.server.broadcast 'doors',
+        html: render_to_string('status', layout: false)
+    end
   end
 
   # PATCH/PUT /doors/1/close
   def close
-    @door.is_open = false
-    @door.save
-    # if @door.update(door_params)
-    #   format.html { redirect_to @door, notice: 'Door was successfully updated.' }
-    #   format.json { render :show, status: :ok, location: @door }
-    # end
+    if @door.update(is_open: false)
+      @doors = Door.all
+      ActionCable.server.broadcast 'doors',
+        html: render_to_string('status', layout: false)
+    end
   end
 
 
