@@ -83,4 +83,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # config.middleware.use DoorActionCable
+  config.web_socket_server_url = "wss://dry-hamlet-23560.herokuapp.com/"
+  config.action_cable.allowed_request_origins = ['https://dry-hamlet-23560.herokuapp.com', 'http://dry-hamlet-23560.herokuapp.com']
+
 end
